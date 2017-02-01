@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LearningApp</string>
+    <string name="button_send">Send</string>
+    <string name="fill_this">Fill this</string>
+    <string name="button_back">Go back</string>
+    <string name="fragment_one">This is fragment one</string>
+    <string name="fragment_two">This is fragment two</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_two">TwoActivity</string>
+</resources>
