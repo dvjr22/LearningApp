@@ -82,4 +82,13 @@ public class Data {
     public void setAge(int age) {
         this.age = age;
     }
+
+    /***********************************************************************************************
+     * called to retrieve a string of data's complete info
+     *
+     * @return      - complete string of data info
+     */
+    public String dataInfo(){
+        return getFirst() + " " + getLast() + ", age: " + getAge() + ", id: " + getId().toString();
+    }
 }
