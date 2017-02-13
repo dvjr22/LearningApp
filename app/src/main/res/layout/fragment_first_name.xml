@@ -22,7 +22,7 @@
         android:id="@+id/edittext_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Place text here"/>
+        android:hint="@string/textview_enter_text_here"/>
 
     <Button
         android:id="@+id/button_frag_one"

@@ -19,6 +19,12 @@
 
     </FrameLayout>
 
+    <Button
+        android:id="@+id/button_fun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_fun"/>
+
     <FrameLayout
         android:id="@+id/fragment_container_two"
         android:layout_weight="1"
