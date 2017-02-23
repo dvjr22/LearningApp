@@ -16,10 +16,8 @@ public class FirstNameFragment extends Fragment {
     private static String FIRST = "first_name";
 
     public static FirstNameFragment newInstance(String first) {
-
         Bundle args = new Bundle();
         args.putString(FIRST, first);
-
         FirstNameFragment fragment = new FirstNameFragment();
         fragment.setArguments(args);
         return fragment;
@@ -31,8 +29,7 @@ public class FirstNameFragment extends Fragment {
 
     public interface firstNameListener{
         void replaceFragmentTwo(String last);
-    }
-
+   }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

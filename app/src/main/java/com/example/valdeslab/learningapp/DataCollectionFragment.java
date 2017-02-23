@@ -38,6 +38,9 @@ public class DataCollectionFragment extends Fragment {
             public void onClick(View v) {
                 listener.collectData(firstName.getText().toString(), lastName.getText().toString(),
                         Integer.parseInt(age.getText().toString()));
+                firstName.setText("");
+                lastName.setText("");
+                age.setText("");
             }
         });
 

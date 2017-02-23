@@ -6,13 +6,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.DataManagement.Data;
 import com.example.valdeslab.learningapp.DataManagement.DataManager;
 
+import java.util.ArrayList;
+
 public class DataCollectionActivity extends AppCompatActivity implements
     DataCollectionFragment.DataCollectionListener{
+
+    private static String TAG = "trace";
 
     private DataManager dataManager;
 
@@ -28,6 +33,11 @@ public class DataCollectionActivity extends AppCompatActivity implements
         dataManager = DataManager.get();
 
         loadFragment();
+
+        ArrayList<Data> dataArrayList = dataManager.getArrayList();
+        for(int i = 0; i < dataArrayList.size(); i++){
+            Log.i(TAG, "in list (DCActivity): " + dataArrayList.get(i).dataInfo());
+        }
 
     }
 
