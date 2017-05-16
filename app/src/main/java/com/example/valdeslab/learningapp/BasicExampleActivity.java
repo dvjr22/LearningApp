@@ -1,15 +1,14 @@
 package com.example.valdeslab.learningapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class BasicExampleActivity extends AppCompatActivity {
 
     private Button send;
     private Button back;
@@ -17,11 +16,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText firstName;
     private EditText lastName;
 
+    public static Intent newIntent(Context context){
+        return new  Intent(context, BasicExampleActivity.class);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_basic_example);
 
         send = (Button) findViewById(R.id.button_send);
         send.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void doSomething(View view){
         String first = firstName.getText().toString();
         String last = lastName.getText().toString();
-        startActivity(TwoActivity.newIntent(this, first, last));
+        startActivity(FragmentExampleActivity.newIntent(this, first, last));
 
     }
 

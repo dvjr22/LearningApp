@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TwoActivity extends AppCompatActivity implements
+public class FragmentExampleActivity extends AppCompatActivity implements
     FirstNameFragment.firstNameListener,
     LastNameFragment.lastNameListener {
 
@@ -17,7 +17,7 @@ public class TwoActivity extends AppCompatActivity implements
     private static String LAST = "last_name";
 
     public static Intent newIntent(Context context, String first, String last){
-        Intent intent = new Intent(context, TwoActivity.class);
+        Intent intent = new Intent(context, FragmentExampleActivity.class);
         intent.putExtra(FIRST, first);
         intent.putExtra(LAST, last);
         return intent;
@@ -26,7 +26,7 @@ public class TwoActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two);
+        setContentView(R.layout.activity_fragment_example);
 
         String first = getIntent().getStringExtra(FIRST);
         String last = getIntent().getStringExtra(LAST);
