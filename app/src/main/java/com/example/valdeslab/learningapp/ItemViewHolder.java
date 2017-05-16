@@ -16,9 +16,13 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
     public ItemViewHolder(View view) {
         super(view);
 
+        // regular_row_item.xml
         regularLayout = (LinearLayout) view.findViewById(R.id.regularLayout);
+        // regular_row_item.xml
         listItem = (TextView) view.findViewById(R.id.list_item);
+        // swipe_row_item.xml
         swipeLayout = (LinearLayout) view.findViewById(R.id.swipeLayout);
+        // swipe_row_item.xml
         undo = (TextView) view.findViewById(R.id.undo);
 
     }

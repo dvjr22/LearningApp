@@ -24,6 +24,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private void loadFragment(){
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = RecyclerViewFragment.newInstance();
-        fragmentManager.beginTransaction().add(R.id.container_recycler_view_activity, fragment).commit();
+        fragmentManager.beginTransaction().
+                add(R.id.container_recycler_view_activity, fragment).commit();
     }
 }
