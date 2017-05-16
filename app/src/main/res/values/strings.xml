@@ -13,6 +13,7 @@
     <string name="age">Enter Your Age:</string>
     <string name="submit">Submit</string>
     <string name="basic_activity">Basic Activity</string>
+    <string name="fragment_data_movement">Fragment Data Movement</string>
     <string name="recycler_view">Recycler View</string>
     <string name="archived_label">Archive</string>
     <string name="undo_label">Undo</string>

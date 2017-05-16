@@ -1,9 +1,7 @@
 package com.example.valdeslab.learningapp;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,6 +24,14 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
 
+        DataMovementButton = (Button) findViewById(R.id.fragment_data_example);
+        DataMovementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(FragmentExampleActivity.newIntent(getApplicationContext(), null, null));
+            }
+        });
+
         RecyclerViewButton = (Button) findViewById(R.id.recycler_view_example);
         RecyclerViewButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +40,6 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
+
 }
