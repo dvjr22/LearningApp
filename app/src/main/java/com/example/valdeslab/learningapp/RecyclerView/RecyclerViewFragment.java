@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.RecyclerView;
 
 
 import android.support.v4.app.Fragment;
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.valdeslab.learningapp.R;
 import com.example.valdeslab.learningapp.Utilities.SwipeUtil;
 
 import java.util.ArrayList;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:orientation="vertical"
-    tools:context="com.example.valdeslab.learningapp.BasicExampleActivity">
+    tools:context="com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

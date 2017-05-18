@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.valdeslab.learningapp.R;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 

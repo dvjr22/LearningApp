@@ -1,9 +1,11 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.RecyclerView;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.valdeslab.learningapp.R;
 
 
 public class ItemViewHolder extends RecyclerView.ViewHolder {

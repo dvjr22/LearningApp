@@ -15,10 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BasicExampleActivity" />
-        <activity android:name=".FragmentExampleActivity" />
-        <activity android:name=".DataCollectionActivity" />
-        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".DataMovement.BasicExampleActivity" />
+        <activity android:name=".DataMovement.FragmentExampleActivity" />
+        <activity android:name=".DataMovement.DataCollectionActivity" />
+        <activity android:name=".RecyclerView.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.DataMovement;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.valdeslab.learningapp.R;
 
 public class LastNameFragment extends Fragment {
 

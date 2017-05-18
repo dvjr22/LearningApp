@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.DataMovement;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.valdeslab.learningapp.R;
 
 public class FragmentExampleActivity extends AppCompatActivity implements
     FirstNameFragment.firstNameListener,

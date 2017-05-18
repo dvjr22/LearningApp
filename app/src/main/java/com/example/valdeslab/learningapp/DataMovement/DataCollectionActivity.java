@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.DataMovement;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.DataManagement.Data;
 import com.example.valdeslab.learningapp.DataManagement.DataManager;
+import com.example.valdeslab.learningapp.R;
 
 import java.util.ArrayList;
 
