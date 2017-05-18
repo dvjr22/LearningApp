@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.Utilities;
 
 
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
+
+import com.example.valdeslab.learningapp.R;
 
 public abstract class SwipeUtil extends ItemTouchHelper.SimpleCallback {
 
