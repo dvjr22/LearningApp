@@ -14,17 +14,28 @@ public class NavigationActivity extends AppCompatActivity {
     private Button RecyclerViewButton;
     private Button DataMovementButton;
     private Button BasicActivityButton;
+    private Button DataChartsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
+        setItUp();
+
+    }
+
+    /***********************************************************************************************
+     *
+     */
+    private void setItUp(){
 
         BasicActivityButton = (Button) findViewById(R.id.basic_example);
         BasicActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               startActivity(BasicExampleActivity.newIntent(getApplicationContext()));
+                startActivity(BasicExampleActivity.newIntent(getApplicationContext()));
             }
         });
 
@@ -41,6 +52,14 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(RecyclerViewActivity.newInstance(getApplicationContext()));
+            }
+        });
+
+        DataMovementButton = (Button) findViewById(R.id.data_chart_example);
+        DataMovementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(ChartActivity.newIntent(getApplicationContext()));
             }
         });
 

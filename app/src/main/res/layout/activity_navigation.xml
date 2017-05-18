@@ -25,4 +25,10 @@
         android:layout_height="wrap_content"
         android:text="@string/recycler_view"/>
 
+    <Button
+        android:id="@+id/data_chart_example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/data_charts"/>
+
 </LinearLayout>
