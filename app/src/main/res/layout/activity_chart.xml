@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.valdeslab.learningapp.ChartActivity">
+    tools:context="com.example.valdeslab.learningapp.Charts.ChartActivity">
 
     <FrameLayout
         android:id="@+id/chart_activity_fragment_container"

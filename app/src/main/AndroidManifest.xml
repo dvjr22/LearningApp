@@ -19,7 +19,7 @@
         <activity android:name=".DataMovement.FragmentExampleActivity" />
         <activity android:name=".DataMovement.DataCollectionActivity" />
         <activity android:name=".RecyclerView.RecyclerViewActivity" />
-        <activity android:name=".ChartActivity"></activity>
+        <activity android:name=".Charts.ChartActivity"></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,9 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.Charts;
 
 import android.content.Context;
 import android.widget.TextView;
 
+import com.example.valdeslab.learningapp.R;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;

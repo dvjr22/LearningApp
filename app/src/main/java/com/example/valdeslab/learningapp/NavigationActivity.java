@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.valdeslab.learningapp.Charts.ChartActivity;
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.DataMovement.FragmentExampleActivity;
 import com.example.valdeslab.learningapp.RecyclerView.RecyclerViewActivity;

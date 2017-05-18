@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.Charts;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.example.valdeslab.learningapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
@@ -48,6 +49,7 @@ public class BarChartFrag extends Fragment implements OnChartGestureListener {
         mChart.getDescription().setEnabled(false);
         mChart.setOnChartGestureListener(this);
 
+        // TODO: 5/18/17 figure out what MarkerView does
         MyMarkerView mv = new MyMarkerView(getActivity(), R.layout.custom_marker_view);
         mv.setChartView(mChart); // For bounds control
         mChart.setMarker(mv);
@@ -55,9 +57,7 @@ public class BarChartFrag extends Fragment implements OnChartGestureListener {
         mChart.setDrawGridBackground(false);
         mChart.setDrawBarShadow(false);
 
-//        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),"OpenSans-Light.ttf");
-
-
+        // Store data
         List<BarEntry> entries = new ArrayList<>();
         // row, height
         entries.add(new BarEntry(0f, 30f));
@@ -68,9 +68,13 @@ public class BarChartFrag extends Fragment implements OnChartGestureListener {
         entries.add(new BarEntry(5f, 60f));
 
 
+        // Load data to be displayed
         BarDataSet set = new BarDataSet(entries, "BarDataSet");
-
         BarData data = new BarData(set);
+
+        // Set the colors to be used
+        // Number of colors don't need to match data set
+        // Colors will cycle
         set.setColors(new int[] {
                 R.color.colorGreen,
                 R.color.colorYellow,
@@ -80,10 +84,13 @@ public class BarChartFrag extends Fragment implements OnChartGestureListener {
                 R.color.colorGrey
         }, getContext());
 
+        // Distance between bars
         data.setBarWidth(0.9f);
 
+        // Place the data in the chart
         mChart.setData(data);
 
+        // Set up the legend
         Legend l = mChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
@@ -91,17 +98,23 @@ public class BarChartFrag extends Fragment implements OnChartGestureListener {
         l.setDrawInside(true);
 
         YAxis leftAxis = mChart.getAxisLeft();
-       // leftAxis.setTypeface(tf);
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
 
+        // Sets the Y axis to be displayed
+        // Y axis will not be displayed to the right
         mChart.getAxisRight().setEnabled(false);
 
         XAxis xAxis = mChart.getXAxis();
+        // draws X axis lines for each bar
         xAxis.setEnabled(false);
 
         // programatically add the chart
+        // Widget to add in layout file currently commented out
         FrameLayout parent = (FrameLayout) v.findViewById(R.id.parentLayout);
         parent.addView(mChart);
+
+        // refresh
+        mChart.invalidate();
 
         return v;
     }

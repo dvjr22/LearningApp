@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.Charts;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.valdeslab.learningapp.RecyclerView.RecyclerViewFragment;
+import com.example.valdeslab.learningapp.R;
 
 public class ChartActivity extends AppCompatActivity {
 
@@ -20,25 +20,26 @@ public class ChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
-        loadChart();
-        loadOtherChart();
+        loadPieChart();
+        loadBarChart();
 
     }
 
-    private void loadChart(){
+    private void loadPieChart(){
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = PieChartFrag.newInstance();
         fragmentManager.beginTransaction().
                 add(R.id.chart_activity_fragment_container, fragment).commit();
 
-
     }
 
-    private void loadOtherChart(){
+    private void loadBarChart(){
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = BarChartFrag.newInstance();
-        fragmentManager.beginTransaction().add(R.id.chart_activity_fragment_container_two, fragment).commit();
+        fragmentManager.beginTransaction().
+                add(R.id.chart_activity_fragment_container_two, fragment).commit();
+
     }
 }

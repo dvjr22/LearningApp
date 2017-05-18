@@ -1,4 +1,4 @@
-package com.example.valdeslab.learningapp;
+package com.example.valdeslab.learningapp.Charts;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.valdeslab.learningapp.R;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
@@ -31,34 +32,35 @@ public class PieChartFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_simple_pie, container, false);
 
+        // Set up chart
         mChart = (PieChart) v.findViewById(R.id.pieChart1);
         mChart.getDescription().setEnabled(false);
 
-        //Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), "OpenSans-Light.ttf");
-
-        //mChart.setCenterTextTypeface(tf);
         mChart.setCenterText(generateCenterText());
         mChart.setCenterTextSize(10f);
-        //mChart.setCenterTextTypeface(tf);
 
         // radius of the center hole in percent of maximum radius
         mChart.setHoleRadius(45f);
         mChart.setTransparentCircleRadius(50f);
 
+        // Setup legend
         Legend l = mChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
         l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         l.setDrawInside(false);
 
+        // Setup data
         List<PieEntry> entries = new ArrayList<>();
 
         // All entries add up to 100
+        // PieEntry(percent, label)
         entries.add(new PieEntry(18.5f, "Green"));
         entries.add(new PieEntry(26.7f, "Yellow"));
         entries.add(new PieEntry(24.0f, "Red"));
         entries.add(new PieEntry(30.8f, "Blue"));
 
+        // Set data to PieDataSet
         PieDataSet set = new PieDataSet(entries, "Favorite Colors Results");
 
         // Colors need to be in the order of the entries to correspond
@@ -68,9 +70,13 @@ public class PieChartFrag extends Fragment {
                 R.color.colorRed,
                 R.color.colorPrimaryDark
         }, getContext());
+
+        // Set data to chart
         PieData data = new PieData(set);
         mChart.setData(data);
-        //mChart.invalidate();
+
+        // Refresh
+        mChart.invalidate();
 
         return v;
 
@@ -87,5 +93,7 @@ public class PieChartFrag extends Fragment {
         s.setSpan(new ForegroundColorSpan(Color.GRAY), 8, s.length(), 0);
         return s;
     }
+
+    // TODO: 5/18/17 figure out how to handel onClick events
 
 }
