@@ -1,6 +1,5 @@
 package com.example.valdeslab.learningapp;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,7 +11,6 @@ import android.widget.FrameLayout;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -24,6 +22,15 @@ import com.github.mikephil.charting.listener.OnChartGestureListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/***************************************************************************************************
+ * This fragment needs to work:
+ * custom_marker_view.xml
+ * frag_simple_bar.xml
+ * MyMarkerView.java
+ *
+ * Currently set to load chart programatically.
+ *
+ */
 public class BarChartFrag extends Fragment implements OnChartGestureListener {
 
     public static BarChartFrag newInstance() {
