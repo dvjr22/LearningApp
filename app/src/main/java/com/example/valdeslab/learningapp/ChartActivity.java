@@ -21,6 +21,7 @@ public class ChartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chart);
 
         loadChart();
+        loadOtherChart();
 
     }
 
@@ -32,5 +33,12 @@ public class ChartActivity extends AppCompatActivity {
                 add(R.id.chart_activity_fragment_container, fragment).commit();
 
 
+    }
+
+    private void loadOtherChart(){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = BarChartFrag.newInstance();
+        fragmentManager.beginTransaction().add(R.id.chart_activity_fragment_container_two, fragment).commit();
     }
 }
