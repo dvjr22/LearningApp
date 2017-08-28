@@ -13,17 +13,19 @@
     <string name="archived_label">Archive</string>
     <string name="undo_label">Undo</string>
 
-
     <!--  Button labels  -->
     <string name="data_charts">Data Charts</string>
     <string name="recycler_view">Recycler View</string>
     <string name="basic_activity">Basic Activity</string>
-
+    <string name="network_test">Network Test</string>
 
     <string name="submit">Submit</string>
     <string name="button_send">Send</string>
     <string name="button_back">Go back</string>
 
+    <!--  NetworkActivity  -->
+    <string name="seconds_hint">Enter the seconds between pings</string>
+    <string name="button_start_network">Start Network</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

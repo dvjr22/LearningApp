@@ -4,10 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.Charts.ChartActivity;
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.DataMovement.FragmentExampleActivity;
+import com.example.valdeslab.learningapp.Network.NetworkActivity;
 import com.example.valdeslab.learningapp.RecyclerView.RecyclerViewActivity;
 
 public class NavigationActivity extends AppCompatActivity {
@@ -16,6 +18,7 @@ public class NavigationActivity extends AppCompatActivity {
     private Button DataMovementButton;
     private Button BasicActivityButton;
     private Button DataChartsButton;
+    private Button NetworkTestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +59,19 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
 
-        DataMovementButton = (Button) findViewById(R.id.data_chart_example);
-        DataMovementButton.setOnClickListener(new View.OnClickListener() {
+        DataChartsButton = (Button) findViewById(R.id.data_chart_example);
+        DataChartsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(ChartActivity.newIntent(getApplicationContext()));
+            }
+        });
+
+        NetworkTestButton = (Button) findViewById(R.id.network_example);
+        NetworkTestButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(NetworkActivity.newIntent(getApplicationContext()));
             }
         });
 

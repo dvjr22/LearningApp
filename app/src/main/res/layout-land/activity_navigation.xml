@@ -23,6 +23,12 @@
             android:layout_height="wrap_content"
             android:text="@string/fragment_data_movement"/>
 
+        <Button
+            android:id="@+id/network_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/network_test"/>
+
 
 
     </LinearLayout>
