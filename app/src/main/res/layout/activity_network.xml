@@ -11,15 +11,12 @@
         android:id="@+id/edittext_seconds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/seconds_hint"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:hint="@string/seconds_hint"/>
 
     <Button
         android:id="@+id/button_start_network"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:text="@string/button_start_network"/>
 
 </LinearLayout>
