@@ -27,7 +27,6 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
 
         setItUp();
-
     }
 
     /***********************************************************************************************
