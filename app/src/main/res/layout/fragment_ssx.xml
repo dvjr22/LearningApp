@@ -15,6 +15,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -36,6 +37,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -57,6 +59,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -78,6 +81,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -99,6 +103,73 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -129,6 +200,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -150,6 +222,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -171,6 +244,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -192,6 +266,7 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -213,6 +288,73 @@
 
         <!-- Checkbox group -->
         <LinearLayout
+            android:id="@+id/checkbox_group_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!-- Checkbox group -->
+        <LinearLayout
+            android:id="@+id/checkbox_group_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

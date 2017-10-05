@@ -50,34 +50,29 @@ public class KioskActivity extends AppCompatActivity  implements
     public void callServer(){
 
         ArrayList<ArrayList> list = ServerSimulator.request();
-
         ArrayList<Integer> ids = list.get(0);
-
-        for (int i = 0; i < ids.size(); i++) {
-            Log.i(TAG, "(KioskActivity) ids: " + ids.get(i));
-        }
-
         ArrayList<String> ssx = list.get(1);
-
-        for (int i = 0; i < ssx.size(); i++) {
-            Log.i(TAG, "(KioskActivity) ids: " + ssx.get(i));
-        }
 
         if (ids.get(0) < SSX_COUNT) {
             loadSsxFragment(ids, ssx);
         } else {
             loadQuestionsFragment(ids, ssx);
         }
-
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void loadSsxFragment(ArrayList<Integer> ids, ArrayList<String> ssx){
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = SsxFragment.newInstance(ids, ssx);
-        fragmentManager.beginTransaction().add(R.id.kiosk_container, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.kiosk_container, fragment).commit();
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void loadQuestionsFragment(ArrayList<Integer> ids, ArrayList<String> questions){
 
     }
