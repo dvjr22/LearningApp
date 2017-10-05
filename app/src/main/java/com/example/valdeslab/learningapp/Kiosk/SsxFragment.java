@@ -72,12 +72,20 @@ public class SsxFragment extends Fragment {
         ArrayList<Integer> ids = getArguments().getIntegerArrayList(BUNDLE_IDS);
         ArrayList<String> ssx = getArguments().getStringArrayList(BUNDLE_SSX);
 
-        for (int i = 0; i < ids.size(); i++) {
-            Log.i(TAG, "(SsxFragment) ids: " + ids.get(0));
-            Log.i(TAG, "(SsxFragment) ssx: " + ssx.get(1));
-        }
-
         int visibility = ids.size();
+
+        setUpGroups(view, visibility);
+        setUp(view, visibility, ssx);
+
+        return view;
+    }
+
+    /***********************************************************************************************
+     *
+     * @param view
+     * @param visibility
+     */
+    public void setUpGroups(View view, int visibility){
 
         ArrayList<LinearLayout> widgetList = new ArrayList<>(Arrays.asList(
                 (LinearLayout) view.findViewById(R.id.checkbox_group_1),
@@ -98,6 +106,23 @@ public class SsxFragment extends Fragment {
                 (LinearLayout) view.findViewById(R.id.checkbox_group_16))
         );
 
+        for(int i = 0; i < widgetList.size(); i++) {
+            if (i < visibility) {
+                widgetList.get(i).setVisibility(View.VISIBLE);
+            } else {
+                widgetList.get(i).setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    /***********************************************************************************************
+     *
+     * @param view
+     * @param visibility
+     * @param ssx
+     */
+    public void setUp(View view, int visibility, ArrayList<String> ssx){
+
         ArrayList<TextView> textViews = new ArrayList<>(Arrays.asList(
                 (TextView) view.findViewById(R.id.ssx_1),
                 (TextView) view.findViewById(R.id.ssx_2),
@@ -117,19 +142,12 @@ public class SsxFragment extends Fragment {
                 (TextView) view.findViewById(R.id.ssx_16)
         ));
 
-        for(int i = 0; i < widgetList.size(); i++) {
-            if (i < visibility) {
-                widgetList.get(i).setVisibility(View.VISIBLE);
-            } else {
-                widgetList.get(i).setVisibility(View.INVISIBLE);
-            }
-        }
-
         for (int i = 0; i < visibility; i++) {
             textViews.get(i).setText(ssx.get(i));
+            Log.i(TAG, "(SsxFragment): visibility " + visibility);
+            Log.i(TAG, "(SsxFragment): textviews " + textViews.size());
+            Log.i(TAG, "(SsxFragment): ssx " + ssx.size());
         }
-
-        return view;
     }
 
 }

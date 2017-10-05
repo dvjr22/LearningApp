@@ -75,7 +75,6 @@ public class NavBarFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
                 listener.callServer();
             }
         });
