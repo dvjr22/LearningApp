@@ -75,5 +75,9 @@ public class KioskActivity extends AppCompatActivity  implements
      */
     private void loadQuestionsFragment(ArrayList<Integer> ids, ArrayList<String> questions){
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = QuestionFragment.newInstance(ids, questions);
+        fragmentManager.beginTransaction().replace(R.id.kiosk_container, fragment).commit();
+
     }
 }

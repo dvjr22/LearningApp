@@ -85,14 +85,14 @@ public class SsxFragment extends Fragment {
                 (LinearLayout) view.findViewById(R.id.checkbox_group_6),
                 (LinearLayout) view.findViewById(R.id.checkbox_group_7),
                 (LinearLayout) view.findViewById(R.id.checkbox_group_8),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_1),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_2),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_3),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_4),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_5),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_6),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_7),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_8)));
+                (LinearLayout) view.findViewById(R.id.checkbox_group_9),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_10),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_11),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_12),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_13),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_14),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_15),
+                (LinearLayout) view.findViewById(R.id.checkbox_group_16)));
 
         for(int i = 0; i < widgetList.size(); i++) {
             if (i < visibility) {
