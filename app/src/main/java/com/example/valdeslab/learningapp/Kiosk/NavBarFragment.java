@@ -49,9 +49,9 @@ public class NavBarFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_nav_bar, container, false);
 
         back = (TextView) view.findViewById(R.id.nav_back);
-        setOnClick();
 
         next = (TextView) view.findViewById(R.id.nav_next);
+        setOnClickNext();
 
         submit = (TextView) view.findViewById(R.id.nav_submit);
 
@@ -71,11 +71,12 @@ public class NavBarFragment extends Fragment {
         listener = (NavBarListener) context;
     }
 
-    private void setOnClick(){
-        back.setOnClickListener(new View.OnClickListener() {
+    private void setOnClickNext(){
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                listener.callServer();
             }
         });
     }
