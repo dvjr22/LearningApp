@@ -9,16 +9,19 @@ import android.widget.Toast;
 import com.example.valdeslab.learningapp.Charts.ChartActivity;
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.DataMovement.FragmentExampleActivity;
+import com.example.valdeslab.learningapp.Kiosk.KioskActivity;
+import com.example.valdeslab.learningapp.Kiosk.NavBarFragment;
 import com.example.valdeslab.learningapp.Network.NetworkActivity;
 import com.example.valdeslab.learningapp.RecyclerView.RecyclerViewActivity;
 
-public class NavigationActivity extends AppCompatActivity {
+public class NavigationActivity extends AppCompatActivity{
 
     private Button RecyclerViewButton;
     private Button DataMovementButton;
     private Button BasicActivityButton;
     private Button DataChartsButton;
     private Button NetworkTestButton;
+    private Button KioskButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,14 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(NetworkActivity.newIntent(getApplicationContext()));
+            }
+        });
+
+        KioskButton = (Button) findViewById(R.id.kiosk_button);
+        KioskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(KioskActivity.newIntent(getApplicationContext()));
             }
         });
 

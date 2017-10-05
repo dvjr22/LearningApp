@@ -31,7 +31,8 @@
         <activity android:name=".DataMovement.DataCollectionActivity" />
         <activity android:name=".RecyclerView.RecyclerViewActivity" />
         <activity android:name=".Charts.ChartActivity" />
-        <activity android:name=".Network.NetworkActivity"></activity>
+        <activity android:name=".Network.NetworkActivity" />
+        <activity android:name=".Kiosk.KioskActivity"></activity>
     </application>
 
 </manifest>

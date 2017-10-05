@@ -51,6 +51,12 @@
             android:layout_height="wrap_content"
             android:text="@string/data_charts"/>
 
+        <Button
+            android:id="@+id/kiosk_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kiosk_button"/>
+
     </LinearLayout>
 
 
