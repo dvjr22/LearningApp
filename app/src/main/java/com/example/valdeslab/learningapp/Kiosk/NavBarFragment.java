@@ -7,19 +7,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.R;
 
 
 public class NavBarFragment extends Fragment {
 
+    private TextView back, next, submit;
+
     private NavBarListener listener;
 
     public interface NavBarListener {
-        // call methods in activity to server sim
+        void callServer();
     }
-
-
 
     /***********************************************************************************************
      * Required empty constructor
@@ -46,6 +48,13 @@ public class NavBarFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_nav_bar, container, false);
 
+        back = (TextView) view.findViewById(R.id.nav_back);
+        setOnClick();
+
+        next = (TextView) view.findViewById(R.id.nav_next);
+
+        submit = (TextView) view.findViewById(R.id.nav_submit);
+
         return view;
     }
 
@@ -60,6 +69,15 @@ public class NavBarFragment extends Fragment {
 
         super.onAttach(context);
         listener = (NavBarListener) context;
+    }
+
+    private void setOnClick(){
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
