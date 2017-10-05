@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.valdeslab.learningapp.R;
 
@@ -27,9 +28,11 @@ public class SsxFragment extends Fragment {
 
     // left side
     private LinearLayout group1, group2, group3, group4, group5, group6, group7, group8;
+    private TextView ssx1, ssx2, ssx3, ssx4, ssx5, ssx6, ssx7, ssx8;
+
     // right side
     private LinearLayout group9, group10, group11, group12, group13, group14, group15, group16;
-
+    private TextView ssx9, ssx10, ssx11, ssx12, ssx13, ssx14, ssx15, ssx16;
 
     public SsxFragment() {}
 
@@ -74,7 +77,7 @@ public class SsxFragment extends Fragment {
             Log.i(TAG, "(SsxFragment) ssx: " + ssx.get(1));
         }
 
-        int visibility = ids.size() + 1;
+        int visibility = ids.size();
 
         ArrayList<LinearLayout> widgetList = new ArrayList<>(Arrays.asList(
                 (LinearLayout) view.findViewById(R.id.checkbox_group_1),
@@ -92,7 +95,27 @@ public class SsxFragment extends Fragment {
                 (LinearLayout) view.findViewById(R.id.checkbox_group_13),
                 (LinearLayout) view.findViewById(R.id.checkbox_group_14),
                 (LinearLayout) view.findViewById(R.id.checkbox_group_15),
-                (LinearLayout) view.findViewById(R.id.checkbox_group_16)));
+                (LinearLayout) view.findViewById(R.id.checkbox_group_16))
+        );
+
+        ArrayList<TextView> textViews = new ArrayList<>(Arrays.asList(
+                (TextView) view.findViewById(R.id.ssx_1),
+                (TextView) view.findViewById(R.id.ssx_2),
+                (TextView) view.findViewById(R.id.ssx_3),
+                (TextView) view.findViewById(R.id.ssx_4),
+                (TextView) view.findViewById(R.id.ssx_5),
+                (TextView) view.findViewById(R.id.ssx_6),
+                (TextView) view.findViewById(R.id.ssx_7),
+                (TextView) view.findViewById(R.id.ssx_8),
+                (TextView) view.findViewById(R.id.ssx_9),
+                (TextView) view.findViewById(R.id.ssx_10),
+                (TextView) view.findViewById(R.id.ssx_11),
+                (TextView) view.findViewById(R.id.ssx_12),
+                (TextView) view.findViewById(R.id.ssx_13),
+                (TextView) view.findViewById(R.id.ssx_14),
+                (TextView) view.findViewById(R.id.ssx_15),
+                (TextView) view.findViewById(R.id.ssx_16)
+        ));
 
         for(int i = 0; i < widgetList.size(); i++) {
             if (i < visibility) {
@@ -100,6 +123,10 @@ public class SsxFragment extends Fragment {
             } else {
                 widgetList.get(i).setVisibility(View.INVISIBLE);
             }
+        }
+
+        for (int i = 0; i < visibility; i++) {
+            textViews.get(i).setText(ssx.get(i));
         }
 
         return view;
