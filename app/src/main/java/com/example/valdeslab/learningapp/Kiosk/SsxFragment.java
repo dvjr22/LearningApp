@@ -8,8 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.R;
 
@@ -29,10 +32,12 @@ public class SsxFragment extends Fragment {
     // left side
     private LinearLayout group1, group2, group3, group4, group5, group6, group7, group8;
     private TextView ssx1, ssx2, ssx3, ssx4, ssx5, ssx6, ssx7, ssx8;
+    private CheckBox checkBox1, checkBox2, checkbox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8;
 
     // right side
     private LinearLayout group9, group10, group11, group12, group13, group14, group15, group16;
     private TextView ssx9, ssx10, ssx11, ssx12, ssx13, ssx14, ssx15, ssx16;
+    private CheckBox checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16;
 
     public SsxFragment() {}
 
@@ -75,10 +80,14 @@ public class SsxFragment extends Fragment {
         int visibility = ids.size();
 
         setUpGroups(view, visibility);
-        setUp(view, visibility, ssx);
+        setUpSsx(view, visibility, ssx);
+        setUpCheckBoxes(view, visibility, ids);
+
 
         return view;
     }
+
+
 
     /***********************************************************************************************
      *
@@ -121,7 +130,7 @@ public class SsxFragment extends Fragment {
      * @param visibility
      * @param ssx
      */
-    public void setUp(View view, int visibility, ArrayList<String> ssx){
+    public void setUpSsx(View view, int visibility, ArrayList<String> ssx){
 
         ArrayList<TextView> textViews = new ArrayList<>(Arrays.asList(
                 (TextView) view.findViewById(R.id.ssx_1),
@@ -148,6 +157,60 @@ public class SsxFragment extends Fragment {
             Log.i(TAG, "(SsxFragment): textviews " + textViews.size());
             Log.i(TAG, "(SsxFragment): ssx " + ssx.size());
         }
+    }
+
+
+    public void setUpCheckBoxes(View view, int visibility, final ArrayList<Integer> ids) {
+
+        Map<Integer, Boolean> checks = new HashMap<>();
+        checks.put(R.id.checkbox_1, Boolean.FALSE);
+
+        ArrayList<CheckBox> checkboxes = new ArrayList<>(Arrays.asList(
+                (CheckBox) view.findViewById(R.id.checkbox_1),
+                (CheckBox) view.findViewById(R.id.checkbox_2),
+                (CheckBox) view.findViewById(R.id.checkbox_3),
+                (CheckBox) view.findViewById(R.id.checkbox_4),
+                (CheckBox) view.findViewById(R.id.checkbox_5),
+                (CheckBox) view.findViewById(R.id.checkbox_6),
+                (CheckBox) view.findViewById(R.id.checkbox_7),
+                (CheckBox) view.findViewById(R.id.checkbox_8),
+                (CheckBox) view.findViewById(R.id.checkbox_9),
+                (CheckBox) view.findViewById(R.id.checkbox_10),
+                (CheckBox) view.findViewById(R.id.checkbox_11),
+                (CheckBox) view.findViewById(R.id.checkbox_12),
+                (CheckBox) view.findViewById(R.id.checkbox_13),
+                (CheckBox) view.findViewById(R.id.checkbox_14),
+                (CheckBox) view.findViewById(R.id.checkbox_15),
+                (CheckBox) view.findViewById(R.id.checkbox_16)
+        ));
+
+        for (int i = 0; i < visibility; i++){
+
+            checkboxes.get(i).getId();
+
+            checkboxes.get(i).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        Toast.makeText(getContext(), "checked: " + buttonView.getId(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "unchecked " + buttonView.getId(), Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
+
+        }
+
+/*
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(getContext(), "test", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        */
     }
 
 }
