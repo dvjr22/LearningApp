@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.valdeslab.learningapp.R;
 
@@ -18,6 +19,8 @@ public class QuestionFragment extends Fragment {
 
     private static String BUNDLE_IDS = "bundle_ids";
     private static String BUNDLE_QUES = "bundle_ques";
+
+    private TextView question;
 
     public QuestionFragment() {}
 
@@ -61,6 +64,9 @@ public class QuestionFragment extends Fragment {
             Log.i(TAG, "(QuesFragment) ids: " + ids.get(i));
             Log.i(TAG, "(QuesFragment) ssx: " + ques.get(i));
         }
+
+        question = (TextView) view.findViewById(R.id.textview_question);
+        question.setText(ques.get(0));
 
         return view;
     }

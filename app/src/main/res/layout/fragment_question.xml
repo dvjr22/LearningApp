@@ -1,13 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.example.valdeslab.learningapp.Kiosk.QuestionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/textview_question"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textSize="35sp"
         android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"/>
+
+    </RadioGroup>
+
+</LinearLayout>
