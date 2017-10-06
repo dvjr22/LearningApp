@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.R;
@@ -15,7 +16,8 @@ import com.example.valdeslab.learningapp.Utilities.ServerSimulator;
 import java.util.ArrayList;
 
 public class KioskActivity extends AppCompatActivity  implements
-        NavBarFragment.NavBarListener{
+        NavBarFragment.NavBarListener,
+        SsxFragment.SsxFragmentListener{
 
     private static final String TAG = "trace";
     private static final int SSX_COUNT = 8;
@@ -80,4 +82,21 @@ public class KioskActivity extends AppCompatActivity  implements
         fragmentManager.beginTransaction().replace(R.id.kiosk_container, fragment).commit();
 
     }
+
+    /***********************************************************************************************
+     *
+     * @param submission
+     * @param from
+     */
+    public void submitToServerSimulator(ArrayList<String> submission, String from){
+
+        Log.i(TAG, from);
+
+        Toast.makeText(this, "Data sent to server", Toast.LENGTH_SHORT).show();
+
+        for (int i = 0; i < submission.size(); i++) {
+            Log.i(TAG, "(KioskActivity) " + submission.get(i));
+        }
+    }
+
 }

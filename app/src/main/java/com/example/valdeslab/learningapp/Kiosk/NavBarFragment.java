@@ -17,6 +17,7 @@ public class NavBarFragment extends Fragment {
 
     private TextView back, next, submit;
 
+    // Interface and listener
     private NavBarListener listener;
 
     public interface NavBarListener {

@@ -1,6 +1,8 @@
 package com.example.valdeslab.learningapp.Kiosk;
 
 
+import android.content.Context;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -8,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -38,6 +41,18 @@ public class SsxFragment extends Fragment {
     private LinearLayout group9, group10, group11, group12, group13, group14, group15, group16;
     private TextView ssx9, ssx10, ssx11, ssx12, ssx13, ssx14, ssx15, ssx16;
     private CheckBox checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16;
+
+    // Selection trackers
+    Map<Integer, Boolean> selections;
+    Map<Integer, Integer> ssxSelections;
+    ArrayList<String> submission;
+
+    // Interface and listener
+    private SsxFragmentListener listener;
+
+    public interface SsxFragmentListener {
+        void submitToServerSimulator(ArrayList<String> ssx, String from);
+    }
 
     public SsxFragment() {}
 
@@ -79,10 +94,12 @@ public class SsxFragment extends Fragment {
 
         int visibility = ids.size();
 
+        setUpSelections();
         setUpGroups(view, visibility);
         setUpSsx(view, visibility, ssx);
         setUpCheckBoxes(view, visibility, ids);
 
+        print();
 
         return view;
     }
@@ -159,11 +176,13 @@ public class SsxFragment extends Fragment {
         }
     }
 
-
+    /***********************************************************************************************
+     *
+     * @param view
+     * @param visibility
+     * @param ids
+     */
     public void setUpCheckBoxes(View view, int visibility, final ArrayList<Integer> ids) {
-
-        Map<Integer, Boolean> checks = new HashMap<>();
-        checks.put(R.id.checkbox_1, Boolean.FALSE);
 
         ArrayList<CheckBox> checkboxes = new ArrayList<>(Arrays.asList(
                 (CheckBox) view.findViewById(R.id.checkbox_1),
@@ -186,31 +205,108 @@ public class SsxFragment extends Fragment {
 
         for (int i = 0; i < visibility; i++){
 
-            checkboxes.get(i).getId();
+            populate(checkboxes.get(i).getId(), ids.get(i));
 
             checkboxes.get(i).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-                        Toast.makeText(getContext(), "checked: " + buttonView.getId(), Toast.LENGTH_SHORT).show();
+                        select(buttonView.getId());
                     } else {
-                        Toast.makeText(getContext(), "unchecked " + buttonView.getId(), Toast.LENGTH_SHORT).show();
+                        select(buttonView.getId());
                     }
-
+                    print();
                 }
             });
-
         }
-
-/*
-        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Toast.makeText(getContext(), "test", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-        */
     }
 
+    /***********************************************************************************************
+     *
+     */
+    private void setUpSelections() {
+
+        selections = new HashMap<>();
+        ssxSelections = new HashMap<>();
+        submission = new ArrayList<>();
+    }
+
+    /***********************************************************************************************
+     *
+     * @param rId
+     * @param id
+     */
+    private void populate(Integer rId, Integer id) {
+
+        selections.put(rId, Boolean.FALSE);
+        ssxSelections.put(rId, id);
+    }
+
+    /***********************************************************************************************
+     *
+     * @param rId
+     */
+    private void select(Integer rId) {
+
+        Boolean ssx = !selections.get(rId);
+
+        selections.put(rId, ssx);
+
+        if (ssx) {
+            submission.add(ssxSelections.get(rId).toString());
+        } else {
+            submission.remove(ssxSelections.get(rId).toString());
+        }
+
+    }
+
+    /***********************************************************************************************
+     *
+     */
+    private void print() {
+
+        Log.i(TAG, "(SsxFragment) selections");
+
+        for (Map.Entry<Integer, Boolean> entry : selections.entrySet()) {
+            Integer key = entry.getKey();
+            Boolean value = entry.getValue();
+            Log.i(TAG, "(SsxFragment) " + key.toString() + " " + value);
+        }
+
+        Log.i(TAG, "(SsxFragment) ssxSelections");
+
+        for (Map.Entry<Integer, Integer> entry : ssxSelections.entrySet()) {
+            Integer key = entry.getKey();
+            Integer value = entry.getValue();
+            Log.i(TAG, "(SsxFragment) " + key.toString() + " " + value);
+        }
+
+        Log.i(TAG, "(SsxFragment) submission");
+
+        for (int i = 0; i < submission.size(); i++) {
+            Log.i(TAG, "(SsxFragment) " + submission.get(i));
+        }
+    }
+
+    /***********************************************************************************************
+     * Android method
+     * Called when a fragment is first attached to its context
+     *
+     * @param context       The context to use
+     */
+    @Override
+    public void onAttach(Context context) {
+
+        super.onAttach(context);
+        listener = (SsxFragmentListener) context;
+    }
+
+    /***********************************************************************************************
+     *
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        listener.submitToServerSimulator(submission, "onDestroy");
+    }
 }
