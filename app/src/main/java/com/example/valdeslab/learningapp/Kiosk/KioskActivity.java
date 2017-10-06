@@ -17,13 +17,14 @@ import java.util.ArrayList;
 
 public class KioskActivity extends AppCompatActivity  implements
         NavBarFragment.NavBarListener,
-        SsxFragment.SsxFragmentListener{
+        SsxFragment.SsxFragmentListener,
+        QuestionFragment.QuestionFragmentListener{
 
     private static final String TAG = "trace";
     private static final int SSX_COUNT = 8;
     private static final int QUESTION_COUNT = 9;
 
-    public static Intent newIntent(Context context){
+    public static Intent newIntent(Context context) {
         return new  Intent(context, KioskActivity.class);
     }
 
@@ -90,13 +91,23 @@ public class KioskActivity extends AppCompatActivity  implements
      */
     public void submitToServerSimulator(ArrayList<String> submission, String from){
 
-        Log.i(TAG, from);
-
         Toast.makeText(this, "Data sent to server", Toast.LENGTH_SHORT).show();
 
         for (int i = 0; i < submission.size(); i++) {
             Log.i(TAG, "(KioskActivity) " + submission.get(i));
         }
+    }
+
+    /***********************************************************************************************
+     *
+     * @param quesId
+     * @param answer
+     */
+    public void submitToServerSimulator(String quesId, String answer) {
+
+        Toast.makeText(this, "Data sent to server", Toast.LENGTH_SHORT).show();
+
+        Log.i(TAG, "(KioskActivity) " + quesId + " " + answer);
     }
 
 }

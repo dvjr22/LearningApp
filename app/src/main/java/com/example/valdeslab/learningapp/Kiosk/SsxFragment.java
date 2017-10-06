@@ -32,16 +32,6 @@ public class SsxFragment extends Fragment {
     private static String BUNDLE_IDS = "bundle_ids";
     private static String BUNDLE_SSX = "bundle_ssx";
 
-    // left side
-    private LinearLayout group1, group2, group3, group4, group5, group6, group7, group8;
-    private TextView ssx1, ssx2, ssx3, ssx4, ssx5, ssx6, ssx7, ssx8;
-    private CheckBox checkBox1, checkBox2, checkbox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8;
-
-    // right side
-    private LinearLayout group9, group10, group11, group12, group13, group14, group15, group16;
-    private TextView ssx9, ssx10, ssx11, ssx12, ssx13, ssx14, ssx15, ssx16;
-    private CheckBox checkBox9, checkBox10, checkBox11, checkBox12, checkBox13, checkBox14, checkBox15, checkBox16;
-
     // Selection trackers
     Map<Integer, Boolean> selections;
     Map<Integer, Integer> ssxSelections;
@@ -111,7 +101,7 @@ public class SsxFragment extends Fragment {
      * @param view
      * @param visibility
      */
-    public void setUpGroups(View view, int visibility){
+    private void setUpGroups(View view, int visibility){
 
         ArrayList<LinearLayout> widgetList = new ArrayList<>(Arrays.asList(
                 (LinearLayout) view.findViewById(R.id.checkbox_group_1),
@@ -147,7 +137,7 @@ public class SsxFragment extends Fragment {
      * @param visibility
      * @param ssx
      */
-    public void setUpSsx(View view, int visibility, ArrayList<String> ssx){
+    private void setUpSsx(View view, int visibility, ArrayList<String> ssx){
 
         ArrayList<TextView> textViews = new ArrayList<>(Arrays.asList(
                 (TextView) view.findViewById(R.id.ssx_1),
@@ -182,7 +172,7 @@ public class SsxFragment extends Fragment {
      * @param visibility
      * @param ids
      */
-    public void setUpCheckBoxes(View view, int visibility, final ArrayList<Integer> ids) {
+    private void setUpCheckBoxes(View view, int visibility, final ArrayList<Integer> ids) {
 
         ArrayList<CheckBox> checkboxes = new ArrayList<>(Arrays.asList(
                 (CheckBox) view.findViewById(R.id.checkbox_1),
