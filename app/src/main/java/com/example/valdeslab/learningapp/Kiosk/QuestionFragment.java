@@ -1,6 +1,5 @@
 package com.example.valdeslab.learningapp.Kiosk;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -8,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -25,8 +23,6 @@ public class QuestionFragment extends Fragment {
 
     private TextView question;
 
-    private RadioButton yes;
-    private RadioButton no;
     private RadioGroup radioGroup;
 
     private boolean answer = false;
@@ -123,7 +119,6 @@ public class QuestionFragment extends Fragment {
             }
         });
     }
-
 
     /***********************************************************************************************
      * Android method
