@@ -3,8 +3,10 @@ package com.example.valdeslab.learningapp.Bluetooth;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHealth;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +21,7 @@ import java.util.Set;
 public class BluetoothActivity extends AppCompatActivity {
 
     private static final int REQUEST_ENABLE_BT = 0;
+    private static final int REQUEST_DISCOVERABLE = 1;
 
     private static final String TAG = "trace";
 
@@ -64,7 +67,44 @@ public class BluetoothActivity extends AppCompatActivity {
 
         }
 
+        // register for broadcasts when a device is discovered
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(Receiver, filter);
 
+
+        // This asks to make device discovera ble for 5 minutes
+        // default is 2 min
+/*
+        Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+        startActivityForResult(discoverableIntent, REQUEST_DISCOVERABLE);
+*/
+
+    }
+
+    private final BroadcastReceiver Receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                // Discovery has found a device. Get the Bluetooth device
+                // object and its info from the intent
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                String deviceName = device.getName();
+                String deviceHardwareAddress = device.getAddress();
+
+                log(deviceName + " " + deviceHardwareAddress);
+            }
+
+        }
+    };
+
+    /***********************************************************************************************
+     *
+     * @param log
+     */
+    private void log(String log) {
+        Log.i(TAG, "(BluetoothActivity) + " + log);
     }
 
     /***********************************************************************************************
@@ -81,8 +121,11 @@ public class BluetoothActivity extends AppCompatActivity {
 
         switch(requestCode) {
             case REQUEST_ENABLE_BT:
-
                 if (resultCode < 0); // Do something when request is denied
+                break;
+
+            case REQUEST_DISCOVERABLE:
+                log("Something happened");
                 break;
 
             default:
@@ -91,10 +134,15 @@ public class BluetoothActivity extends AppCompatActivity {
         }
 
         log(test);
-
     }
 
-    private void log(String log) {
-        Log.i(TAG, "(BluetoothActivity) + " + log);
+    /***********************************************************************************************
+     *
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        unregisterReceiver(Receiver);
     }
 }
