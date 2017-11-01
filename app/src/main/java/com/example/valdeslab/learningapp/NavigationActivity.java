@@ -1,5 +1,7 @@
 package com.example.valdeslab.learningapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,19 @@ public class NavigationActivity extends AppCompatActivity{
     private Button kioskButton;
     private Button bluetoothButton;
 
+    /***********************************************************************************************
+     *
+     * @param context
+     * @return
+     */
+    public static Intent newIntent(Context context) {
+        return new  Intent(context, NavigationActivity.class);
+    }
+
+    /***********************************************************************************************
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -92,7 +107,6 @@ public class NavigationActivity extends AppCompatActivity{
                 startActivity(BluetoothActivity.newIntent(getApplicationContext()));
             }
         });
-
 
     }
 
