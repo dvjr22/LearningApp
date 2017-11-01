@@ -29,7 +29,11 @@
             android:layout_height="wrap_content"
             android:text="@string/network_test"/>
 
-
+        <Button
+            android:id="@+id/bluetooth_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bluetooth_button"/>
 
     </LinearLayout>
 
@@ -58,7 +62,5 @@
             android:text="@string/kiosk_button"/>
 
     </LinearLayout>
-
-
 
 </LinearLayout>
