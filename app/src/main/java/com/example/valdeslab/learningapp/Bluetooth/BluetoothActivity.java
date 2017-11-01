@@ -1,6 +1,7 @@
 package com.example.valdeslab.learningapp.Bluetooth;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHealth;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,9 @@ import android.widget.Toast;
 
 import com.example.valdeslab.learningapp.NavigationActivity;
 import com.example.valdeslab.learningapp.R;
+
+import java.util.Iterator;
+import java.util.Set;
 
 public class BluetoothActivity extends AppCompatActivity {
 
@@ -40,6 +44,26 @@ public class BluetoothActivity extends AppCompatActivity {
             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(intent, REQUEST_ENABLE_BT);
         }
+
+        // get all the bluetooth device paired to the device
+        Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+/*
+        Iterator<BluetoothDevice> it = pairedDevices.iterator();
+        while(it.hasNext()) {
+            log(it.next().toString());
+
+        }
+*/
+        // Iterate through set and get paired device name and mac address
+        if (pairedDevices.size() > 0) {
+            for (BluetoothDevice device : pairedDevices ) {
+                log(device.getName());
+                log(device.getAddress());
+
+            }
+
+        }
+
 
     }
 
