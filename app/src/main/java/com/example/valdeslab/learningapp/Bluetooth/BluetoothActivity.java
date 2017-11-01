@@ -79,7 +79,6 @@ public class BluetoothActivity extends AppCompatActivity {
         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
         startActivityForResult(discoverableIntent, REQUEST_DISCOVERABLE);
 */
-
     }
 
     private final BroadcastReceiver Receiver = new BroadcastReceiver() {
