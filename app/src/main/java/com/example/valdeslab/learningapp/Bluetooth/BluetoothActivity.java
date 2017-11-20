@@ -205,27 +205,31 @@ public class BluetoothActivity extends AppCompatActivity {
 
             }
         }
-/*
+
+        /*
+
         Iterator<BluetoothDevice> it = pairedDevices.iterator();
         while(it.hasNext()) {
             log(it.next().toString());
 
         }
-*/
-/*
+
+
         // register for broadcasts when a device is discovered
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
         registerReceiver(Receiver, filter);
-*/
+
         // This asks to make device discoverable for 5 minutes
         // default is 2 min
-/*
+
         Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
         discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
         startActivityForResult(discoverableIntent, REQUEST_DISCOVERABLE);
-*/
+
+         */
     }
-/*
+
+    /*
     private final BroadcastReceiver Receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -242,7 +246,9 @@ public class BluetoothActivity extends AppCompatActivity {
 
         }
     };
-*/
+    */
+
+
     /***********************************************************************************************
      *
      * @param log
