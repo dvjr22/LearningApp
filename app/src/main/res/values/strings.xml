@@ -20,6 +20,7 @@
     <string name="network_test">Network Test</string>
     <string name="kiosk_button">Kiosk Sample Activity</string>
     <string name="bluetooth_button">Bluetooth Activity</string>
+    <string name="google_chart_button">Google Chart Activity</string>
 
     <string name="submit">Submit</string>
     <string name="button_send">Send</string>
@@ -67,7 +68,6 @@
     <string name="zero">0</string>
     <string name="desc">Light Indicator</string>
     <string name="version">Version: </string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -11,6 +11,7 @@ import com.example.valdeslab.learningapp.Bluetooth.BluetoothActivity;
 import com.example.valdeslab.learningapp.Charts.ChartActivity;
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.DataMovement.FragmentExampleActivity;
+import com.example.valdeslab.learningapp.GoogleCharts.GoogleChartActivity;
 import com.example.valdeslab.learningapp.Kiosk.KioskActivity;
 import com.example.valdeslab.learningapp.Network.NetworkActivity;
 import com.example.valdeslab.learningapp.RecyclerView.RecyclerViewActivity;
@@ -24,6 +25,7 @@ public class NavigationActivity extends AppCompatActivity{
     private Button networkTestButton;
     private Button kioskButton;
     private Button bluetoothButton;
+    private Button googleChartButton;
 
     /***********************************************************************************************
      *
@@ -48,7 +50,7 @@ public class NavigationActivity extends AppCompatActivity{
     }
 
     /***********************************************************************************************
-     *
+     * Set up buttons
      */
     private void setItUp(){
 
@@ -107,6 +109,16 @@ public class NavigationActivity extends AppCompatActivity{
                 startActivity(BluetoothActivity.newIntent(getApplicationContext()));
             }
         });
+
+        googleChartButton = (Button) findViewById(R.id.google_chart_button);
+        googleChartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(GoogleChartActivity.newIntent(getApplicationContext()));
+            }
+        });
+
+
 
     }
 

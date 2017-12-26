@@ -37,6 +37,8 @@
         <activity android:name=".Kiosk.KioskActivity"/>
         <activity android:name=".Bluetooth.BluetoothActivity">
         </activity>
+        <activity android:name=".GoogleCharts.GoogleChartActivity">
+        </activity>
     </application>
 
 </manifest>

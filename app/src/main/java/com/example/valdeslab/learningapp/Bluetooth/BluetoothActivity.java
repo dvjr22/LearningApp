@@ -1,6 +1,5 @@
 package com.example.valdeslab.learningapp.Bluetooth;
 
-
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.app.AlertDialog;
