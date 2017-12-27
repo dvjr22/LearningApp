@@ -50,10 +50,16 @@
         android:text="@string/bluetooth_button"/>
 
     <Button
+        android:id="@+id/pulse_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pulse_button"/>
+<!--
+    <Button
         android:id="@+id/google_chart_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/google_chart_button"/>
-
+-->
 
 </LinearLayout>

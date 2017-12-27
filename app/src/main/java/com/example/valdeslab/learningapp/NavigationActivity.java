@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.valdeslab.learningapp.Bluetooth.BluetoothActivity;
 import com.example.valdeslab.learningapp.Charts.ChartActivity;
+import com.example.valdeslab.learningapp.Charts.ChartTwoActivity;
 import com.example.valdeslab.learningapp.DataMovement.BasicExampleActivity;
 import com.example.valdeslab.learningapp.DataMovement.FragmentExampleActivity;
 import com.example.valdeslab.learningapp.GoogleCharts.GoogleChartActivity;
@@ -25,7 +26,8 @@ public class NavigationActivity extends AppCompatActivity{
     private Button networkTestButton;
     private Button kioskButton;
     private Button bluetoothButton;
-    private Button googleChartButton;
+    //private Button googleChartButton; // Deactivate b/c abandonded this idea
+    private Button pulseOximeterButton;
 
     /***********************************************************************************************
      *
@@ -110,6 +112,14 @@ public class NavigationActivity extends AppCompatActivity{
             }
         });
 
+        pulseOximeterButton = (Button) findViewById(R.id.pulse_button);
+        pulseOximeterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(ChartTwoActivity.newIntent(getApplicationContext()));
+            }
+        });
+/*
         googleChartButton = (Button) findViewById(R.id.google_chart_button);
         googleChartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +127,7 @@ public class NavigationActivity extends AppCompatActivity{
                 startActivity(GoogleChartActivity.newIntent(getApplicationContext()));
             }
         });
-
+*/
 
 
     }

@@ -21,6 +21,7 @@
     <string name="kiosk_button">Kiosk Sample Activity</string>
     <string name="bluetooth_button">Bluetooth Activity</string>
     <string name="google_chart_button">Google Chart Activity</string>
+    <string name="pulse_button">Pulse Oximeter</string>
 
     <string name="submit">Submit</string>
     <string name="button_send">Send</string>

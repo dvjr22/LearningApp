@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.valdeslab.learningapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.valdeslab.learningapp">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -39,6 +38,8 @@
         <activity android:name=".Bluetooth.BluetoothActivity">
         </activity>
         <activity android:name=".GoogleCharts.GoogleChartActivity">
+        </activity>
+        <activity android:name=".Charts.ChartTwoActivity">
         </activity>
     </application>
 
