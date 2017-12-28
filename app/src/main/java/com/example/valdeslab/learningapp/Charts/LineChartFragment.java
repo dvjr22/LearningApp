@@ -1,6 +1,7 @@
 package com.example.valdeslab.learningapp.Charts;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -63,10 +64,17 @@ public class LineChartFragment extends Fragment {
         yAxisLeft.setAxisMaximum(135); //Set max range
         yAxisLeft.setAxisMinimum(60); //Set min range
 
-        List<Entry> data = generateData(getArguments().getIntegerArrayList(BUNDLE_TIME),
-                getArguments().getIntegerArrayList(BUNDLE_HR));
+        ArrayList<Integer> time = getArguments().getIntegerArrayList(BUNDLE_TIME);
+        ArrayList<Integer> hr = getArguments().getIntegerArrayList(BUNDLE_HR);
 
-        LineDataSet dataSet = new LineDataSet(data, "Label");
+        xAxis.setAxisMaximum(time.get(time.size()-1)+1); //Set max range
+        xAxis.setAxisMinimum(time.get(0)); //Set min range
+
+        List<Entry> data = generateData(time, hr);
+
+        LineDataSet dataSet = new LineDataSet(data, "You dying, man!");
+        dataSet.setColor(Color.RED); //Line color
+
 
         LineData lineData = new LineData(dataSet);
         lineChart.setData(lineData);

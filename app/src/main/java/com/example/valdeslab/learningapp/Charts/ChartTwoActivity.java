@@ -26,10 +26,16 @@ public class ChartTwoActivity extends AppCompatActivity {
 
     int critical = 1;
 
+    /***********************************************************************************************
+     *
+     */
     public static Intent newIntent(Context context){
         return new Intent(context, ChartTwoActivity.class);
     }
 
+    /***********************************************************************************************
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +44,7 @@ public class ChartTwoActivity extends AppCompatActivity {
 
         execute();
 
-        /*
+        /* This doesn't work.
         try{
             engage();
         }catch (Exception e){
@@ -47,9 +53,10 @@ public class ChartTwoActivity extends AppCompatActivity {
         */
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void loadLineChart(ArrayList<Integer> time, ArrayList<Integer> hr){
-
-        Log.i("trace", Integer.toString(hr.get(hr.size()-1)));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = LineChartFragment.newInstance(time, hr);
@@ -67,16 +74,17 @@ public class ChartTwoActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Toast.makeText(ChartTwoActivity.this, "test", Toast.LENGTH_SHORT).show();
-
                 incrementData();
-                //checkCriticalHeart(hr.get(hr.size()-1));
+                //checkCriticalHeart(hr.get(hr.size()-1)); //This crashes the app
                 loadLineChart(time, hr);
             }
         }, 0, 1000, TimeUnit.MILLISECONDS); // 1 seconds
 
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void incrementData(){
 
         if (count % 30 == 0 && critical % 2 == 0) {
@@ -98,9 +106,22 @@ public class ChartTwoActivity extends AppCompatActivity {
             heart--;
         }
 
+
+        if (time.size() > 9) {
+            time = new ArrayList<>(time.subList(1, 10));
+            hr = new ArrayList<>(hr.subList(1, 10));
+
+            for (int i = 0; i < time.size(); i++){
+                Log.i("trace", "In time: " + time.get(i));
+            }
+        }
+
         Log.i("trace", Integer.toString(heart) + " " + Integer.toString(count));
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void checkCriticalHeart(int lastReading){
 
         Log.i("trace", "checkCritical called");
@@ -109,6 +130,9 @@ public class ChartTwoActivity extends AppCompatActivity {
 
     }
 
+    /***********************************************************************************************
+     *
+     */
     private void engage() throws InterruptedException{
 
         while(true){
@@ -120,9 +144,13 @@ public class ChartTwoActivity extends AppCompatActivity {
         }
     }
 
+    /***********************************************************************************************
+     *
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
         //todo stop runnable here - dvj 12/28/17
     }
+
 }
