@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.example.valdeslab.learningapp.R;
 import com.example.valdeslab.learningapp.Utilities.PatientSimulator;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -21,9 +23,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class LineChartFragment extends Fragment {
 
     private static final String BUNDLE_TIME = "bundle_time";
@@ -53,6 +52,16 @@ public class LineChartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_line_chart, container, false);
 
         lineChart = (LineChart) view.findViewById(R.id.line_chart);
+
+        XAxis xAxis = lineChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); //Set x axis only to appear at bottom
+
+        YAxis yAxisRight = lineChart.getAxisRight(); //Get right instance of y axis
+        yAxisRight.setEnabled(false); //Set to disappear
+
+        YAxis yAxisLeft = lineChart.getAxisLeft(); //Get left instance of y axis
+        yAxisLeft.setAxisMaximum(135); //Set max range
+        yAxisLeft.setAxisMinimum(60); //Set min range
 
         List<Entry> data = generateData(getArguments().getIntegerArrayList(BUNDLE_TIME),
                 getArguments().getIntegerArrayList(BUNDLE_HR));
